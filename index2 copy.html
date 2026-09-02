@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ben & Kasia — 8th April 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-dusk:#3B3560;
+    --sky-mid:#7A5F72;
+    --sky-warm:#E8A857;
+    --sea-pale:#8FAEAC;
+    --sea-teal:#2C5F66;
+    --glen:#2F4A3A;
+    --glen-deep:#1A2B21;
+    --rust:#B5502E;
+    --rust-deep:#7E3A22;
+    --gold:#E3A94C;
+    --gold-pale:#F0C784;
+    --parchment:#F2EAD9;
+    --parchment-warm:#E7DAB9;
+    --ink:#241F1B;
+    --ink-soft:#5B5245;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:999;
+    opacity:0.05;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  h1,h2,h3, .voice{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    color:var(--glen-deep);
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+  section{padding:88px 0;}
+
+  /* ---- HERO ---- */
+  .hero{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    padding:40px 24px 72px;
+  }
+  .hero-scene{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+  }
+  .spirit{
+    animation:float 6s ease-in-out infinite;
+    transform-origin:center;
+  }
+  .spirit.s2{animation-delay:1.1s; animation-duration:7s;}
+  .spirit.s3{animation-delay:2.3s; animation-duration:5.5s;}
+  .spirit.s4{animation-delay:0.6s; animation-duration:6.5s;}
+  .spirit.s5{animation-delay:1.8s; animation-duration:7.5s;}
+  @keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-14px);}
+  }
+  .hero-eyebrow{
+    font-size:14px;
+    letter-spacing:0.02em;
+    color:var(--gold-pale);
+    opacity:0.95;
+    margin-bottom:16px;
+    position:relative;
+    z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(52px,10vw,104px);
+    line-height:0.98;
+    color:var(--parchment);
+    position:relative;
+    z-index:2;
+    text-shadow:0 4px 24px rgba(26,43,33,0.55);
+  }
+  .hero h1 .amp{
+    display:block;
+    font-style:italic;
+    font-size:0.48em;
+    color:var(--gold);
+    margin:8px 0;
+  }
+  .hero-date{
+    margin-top:24px;
+    font-size:20px;
+    color:var(--parchment);
+    position:relative;
+    z-index:2;
+  }
+  .hero-place{
+    margin-top:6px;
+    font-size:16px;
+    color:var(--gold-pale);
+    opacity:0.9;
+    position:relative;
+    z-index:2;
+  }
+  .hero-scroll{
+    margin-top:48px;
+    font-size:13px;
+    letter-spacing:0.03em;
+    color:var(--parchment);
+    opacity:0.7;
+    position:relative;
+    z-index:2;
+  }
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .hero-eyebrow, .hero h1, .hero-date, .hero-place, .hero-scroll{
+    animation:riseIn 1.1s ease both;
+  }
+  .hero h1{animation-delay:0.1s;}
+  .hero-date{animation-delay:0.4s;}
+  .hero-place{animation-delay:0.55s;}
+  .hero-scroll{animation-delay:0.85s;}
+
+  /* ---- RIDGE DIVIDER ---- */
+  .ridge-divider{
+    display:block;
+    width:100%;
+    height:44px;
+    margin-top:-2px;
+  }
+
+  /* ---- SECTION HEADS ---- */
+  .kicker{
+    font-size:13px;
+    color:var(--rust);
+    letter-spacing:0.02em;
+    margin-bottom:10px;
+  }
+  section h2{
+    font-size:clamp(30px,5vw,44px);
+    margin-bottom:20px;
+  }
+  section > .wrap > p.lede{
+    color:var(--ink-soft);
+    font-size:17px;
+    max-width:52ch;
+    margin-bottom:36px;
+  }
+
+  .section-img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:3px;
+    margin-bottom:32px;
+    box-shadow:0 10px 30px rgba(26,43,33,0.18);
+    filter:saturate(0.92) contrast(1.03);
+  }
+  .gallery-strip{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:36px;
+  }
+  .gallery-strip img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:3px;
+    filter:saturate(0.92) contrast(1.03);
+  }
+
+  /* ---- DETAILS CARDS ---- */
+  .details-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+  }
+  .detail-card{
+    background:var(--parchment-warm);
+    border-radius:2px;
+    padding:26px 24px;
+    border-left:4px solid var(--rust);
+    box-shadow:0 6px 18px rgba(26,43,33,0.08);
+  }
+  .detail-card .label{
+    font-size:12px;
+    letter-spacing:0.02em;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  .detail-card .value{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    color:var(--glen-deep);
+  }
+  .detail-card .sub{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+
+  /* ---- SCHEDULE ---- */
+  .timeline{
+    border-left:2px solid var(--parchment-warm);
+    margin-left:6px;
+  }
+  .tl-item{
+    position:relative;
+    padding:0 0 34px 30px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-7px;
+    top:4px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 0 3px var(--parchment);
+  }
+  .tl-time{
+    font-size:13px;
+    color:var(--rust);
+    margin-bottom:4px;
+  }
+  .tl-title{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    color:var(--glen-deep);
+  }
+  .tl-note{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-top:3px;
+  }
+
+  /* ---- TRAVEL ---- */
+  .travel-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:28px;
+  }
+  .travel-block h3{font-size:18px; margin-bottom:8px; color:var(--glen-deep);}
+  .travel-block p{color:var(--ink-soft); font-size:15px;}
+
+  /* ---- RSVP ---- */
+  #rsvp{position:relative;}
+  .rsvp-box{
+    background:var(--glen-deep);
+    background-image:radial-gradient(circle at 82% 12%, rgba(227,169,76,0.28), transparent 55%);
+    color:var(--parchment);
+    border-radius:4px;
+    padding:44px 36px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-form iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 800px;
+    border: none;
+}
+  .rsvp-box h2{color:var(--parchment);}
+  .rsvp-box .lede{color:var(--parchment); opacity:0.8;}
+  form{display:flex; flex-direction:column; gap:16px; margin-top:8px; position:relative; z-index:1;}
+  .row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  label{font-size:13px; color:var(--gold-pale); opacity:0.9; display:block; margin-bottom:6px;}
+  input[type=text], input[type=email], input[type=number], textarea, select{
+    width:100%;
+    background:rgba(242,234,217,0.08);
+    border:1px solid rgba(242,234,217,0.3);
+    border-radius:2px;
+    padding:11px 12px;
+    color:var(--parchment);
+    font-family:'Work Sans', sans-serif;
+    font-size:15px;
+  }
+  input::placeholder, textarea::placeholder{color:rgba(242,234,217,0.45);}
+  select{appearance:none;}
+  fieldset{border:none; padding:0;}
+  .attend-choice{display:flex; gap:12px; margin-top:6px;}
+  .attend-choice button{
+    flex:1;
+    background:transparent;
+    border:1px solid rgba(242,234,217,0.3);
+    color:var(--parchment);
+    padding:12px;
+    border-radius:2px;
+    font-family:'Work Sans', sans-serif;
+    font-size:15px;
+    cursor:pointer;
+  }
+  .attend-choice button.active{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--glen-deep);
+    font-weight:600;
+  }
+  .submit-btn{
+    margin-top:8px;
+    background:var(--rust);
+    color:var(--parchment);
+    border:none;
+    padding:14px;
+    border-radius:2px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+  }
+  .submit-btn:hover{background:var(--rust-deep);}
+  .form-msg{font-size:14px; margin-top:6px;}
+  .form-msg.ok{color:#CFE0B8;}
+  .form-msg.err{color:#EBB5A0;}
+
+  /* ---- REGISTRY ---- */
+  .registry-card{
+    background:var(--parchment-warm);
+    border-radius:2px;
+    padding:34px 28px;
+    text-align:center;
+    border-top:4px solid var(--rust);
+  }
+  .registry-card p{color:var(--ink-soft); max-width:48ch; margin:0 auto 18px;}
+
+  /* ---- FAQ ---- */
+  .faq-item{
+    border-bottom:1px solid var(--parchment-warm);
+  }
+  .faq-q{
+    width:100%;
+    background:none;
+    border:none;
+    text-align:left;
+    padding:20px 0;
+    font-family:'Fraunces', serif;
+    font-size:18px;
+    color:var(--glen-deep);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+  }
+  .faq-q .plus{
+    font-size:22px;
+    color:var(--rust);
+    transition:transform 0.25s ease;
+  }
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+  .faq-a p{padding-bottom:20px;}
+  .faq-item.open .faq-a{max-height:220px;}
+
+  /* ---- FOOTER ---- */
+  footer{
+    background:var(--glen-deep);
+    color:var(--parchment);
+    text-align:center;
+    padding:56px 24px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  footer .voice{color:var(--gold-pale); font-size:26px; margin-bottom:10px; position:relative; z-index:1;}
+  footer p.tag{font-size:14px; opacity:0.75; position:relative; z-index:1;}
+
+  @media(max-width:560px){
+    .row{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .gallery-strip{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg class="hero-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#332C55"/>
+        <stop offset="45%" stop-color="#7A5F72"/>
+        <stop offset="78%" stop-color="#D98F5A"/>
+        <stop offset="100%" stop-color="#E8A857"/>
+      </linearGradient>
+      <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FCE1A8"/>
+        <stop offset="60%" stop-color="#E3A94C"/>
+        <stop offset="100%" stop-color="#E3A94C" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="mistBlur" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="18"/>
+      </filter>
+    </defs>
+
+    <rect x="0" y="0" width="1600" height="900" fill="url(#skyGrad)"/>
+
+    <circle cx="1180" cy="470" r="180" fill="url(#sunGlow)"/>
+    <circle cx="1180" cy="470" r="62" fill="#FBE1A8"/>
+
+    <g class="spirit s1" opacity="0.85">
+      <circle cx="260" cy="260" r="4" fill="#FBE1A8"/>
+      <circle cx="260" cy="260" r="10" fill="#FBE1A8" opacity="0.3"/>
+    </g>
+    <g class="spirit s2" opacity="0.85">
+      <circle cx="980" cy="200" r="3.5" fill="#FBE1A8"/>
+      <circle cx="980" cy="200" r="9" fill="#FBE1A8" opacity="0.3"/>
+    </g>
+    <g class="spirit s3" opacity="0.8">
+      <circle cx="430" cy="360" r="3" fill="#FBE1A8"/>
+      <circle cx="430" cy="360" r="8" fill="#FBE1A8" opacity="0.3"/>
+    </g>
+    <g class="spirit s4" opacity="0.8">
+      <circle cx="1360" cy="330" r="3.5" fill="#FBE1A8"/>
+      <circle cx="1360" cy="330" r="9" fill="#FBE1A8" opacity="0.3"/>
+    </g>
+    <g class="spirit s5" opacity="0.75">
+      <circle cx="720" cy="150" r="3" fill="#FBE1A8"/>
+      <circle cx="720" cy="150" r="8" fill="#FBE1A8" opacity="0.3"/>
+    </g>
+
+    <path d="M100 260 L140 250 L160 258 L180 248" stroke="#241F1B" stroke-width="2.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+    <path d="M1420 200 L1450 190 L1465 196" stroke="#241F1B" stroke-width="2.5" fill="none" opacity="0.35" stroke-linecap="round"/>
+
+    <path d="M0 640 C 200 590, 380 610, 560 570 C 760 525, 940 600, 1140 560 C 1320 525, 1480 590, 1600 560 L1600 900 L0 900 Z" fill="#8FAEAC" opacity="0.55"/>
+
+    <path d="M0 720 C 160 660, 300 690, 460 650 C 620 610, 700 520, 800 500 C 880 485, 940 610, 1060 630 C 1220 655, 1360 610, 1600 660 L1600 900 L0 900 Z" fill="#2C5F66" opacity="0.75"/>
+
+    <ellipse cx="800" cy="700" rx="420" ry="34" fill="#F2EAD9" opacity="0.3" filter="url(#mistBlur)"/>
+    <ellipse cx="280" cy="760" rx="300" ry="26" fill="#F2EAD9" opacity="0.28" filter="url(#mistBlur)"/>
+
+    <path d="M0 900 L0 800 C 120 790, 220 760, 300 780 C 400 805, 470 690, 560 630 C 610 598, 640 560, 665 505 C 690 450, 715 450, 745 510 C 775 575, 800 660, 860 700 C 920 740, 990 700, 1080 730 C 1180 765, 1280 730, 1380 760 C 1460 785, 1540 770, 1600 785 L1600 900 Z" fill="#1A2B21"/>
+  </svg>
+  <p class="hero-eyebrow">together with our amazing family and friends</p>
+  <h1>Kasia<span class="amp">&amp;</span>Ben</h1>
+  <p class="hero-date">Thursday 8th April, 2027</p>
+  <p class="hero-place">Comrie Croft, Perthshire, Scotland</p>
+  <p class="hero-scroll">keep scrolling to find out what's happening↓</p>
+</section>
+
+<svg class="ridge-divider" viewBox="0 0 1600 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 60 L0 40 C 140 20, 260 45, 400 25 C 520 8, 600 8, 680 32 C 760 55, 860 40, 980 30 C 1100 20, 1220 45, 1340 35 C 1440 27, 1520 42, 1600 32 L1600 60 Z" fill="#1A2B21"/>
+</svg>
+
+<section id="details">
+  <div class="wrap">
+    <p class="kicker">the details</p>
+    <h2>When & where</h2>
+    <p class="lede"> Unbelievably excited to have you all at our wedding for a day of fun, chat, remembering good times and dancing!</p>
+    <img class="section-img" src="benkasia.JPG" alt="why do we both have our eyes shut?">
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="label">Date</div>
+        <div class="value">8 April 2027</div>
+        <div class="sub">Ceremony begins at a TBA time </div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Venue</div>
+        <div class="value">Comrie Croft</div>
+        <div class="sub">Perthshire, Scotland</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Dress code</div>
+        <div class="value">Whatever makes you feel good! (Me and Kasia will be dressed relatively formally...)</div>
+        <div class="sub">Bring some dancing shoes for later</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="ridge-divider" viewBox="0 0 1600 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 30 C 160 55, 260 10, 420 35 C 560 57, 660 15, 800 30 C 940 45, 1040 12, 1200 30 C 1340 46, 1460 18, 1600 34 L1600 0 L0 0 Z" fill="#2C5F66" opacity="0.18"/>
+</svg>
+
+<section id="schedule">
+  <div class="wrap">
+    <p class="kicker">the day</p>
+    <h2>Schedule</h2>
+    <p class="lede">This is only a rough timeline, likely to change multiple times before the actual day!</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">12:30pm</div>
+        <div class="tl-title">Guests arrive</div>
+        <div class="tl-note">Don't be late!</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">1:00pm</div>
+        <div class="tl-title">Ceremony</div>
+        <div class="tl-note">Outdoors, weather allowing — an indoor backup is on standby</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2:00pm</div>
+        <div class="tl-title">Drinks & photographs</div>
+        <div class="tl-note">Grab yourself a cheeky glass of the fizz</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">4:00pm</div>
+        <div class="tl-title">Wedding dinner</div>
+        <div class="tl-note">It's going to be a feast</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">8:00pm</div>
+        <div class="tl-title">The party begins!</div>
+        <div class="tl-note">Ceilidh band, dancing, and sending a few mtb trails to finish.</div>
+      </div>
+    </div>
+    <div class="gallery-strip">
+      <img src="a.JPG" alt="yoyo">
+      <img src="b.JPG" alt="let's go!'">
+      <img src="c.JPG" alt="fun wedding gonna be">
+    </div>
+  </div>
+</section>
+
+<svg class="ridge-divider" viewBox="0 0 1600 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 60 L0 40 C 140 20, 260 45, 400 25 C 520 8, 600 8, 680 32 C 760 55, 860 40, 980 30 C 1100 20, 1220 45, 1340 35 C 1440 27, 1520 42, 1600 32 L1600 60 Z" fill="#B5502E" opacity="0.12"/>
+</svg>
+
+<section id="travel">
+  <div class="wrap">
+    <p class="kicker">getting here</p>
+    <h2>Travel & stay</h2>
+    <p class="lede">Comrie Croft sits just outside Comrie in Perthshire, about 90 minutes from Edinburgh or Glasgow. A few options depending on how you're arriving.</p>
+    <img class="section-img" src="000072.JPG" alt="you better be there">
+    <div class="travel-grid">
+      <div class="travel-block">
+        <h3>By car</h3>
+        <p>Free on-site parking. Enter Comrie Croft into Google maps, the address is Braincroft, Crieff PH7 4JZ. </p>
+      </div>
+      <div class="travel-block">
+        <h3>By train</h3>
+        <p>Gleneagles station is around 25 minutes away by taxi, with direct trains from Edinburgh and Glasgow. There will be plenty of cars making there way from Glasgow so let us know if you are strapped for a lift</p>
+      </div>
+      <div class="travel-block">
+        <h3>Staying over</h3>
+        <p> There are many local accomodation options alongside the opportunity to camp. More information can be found at the Comrie Croft website, or ask me and Kasia for help.</p>
+      </div>
+      <div class="travel-block">
+        <h3>Getting between venues</h3>
+        <p>Everything happens on the one site, so once you're in, you're in for the day. There is plenty of parking on site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="ridge-divider" viewBox="0 0 1600 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 30 C 160 55, 260 10, 420 35 C 560 57, 660 15, 800 30 C 940 45, 1040 12, 1200 30 C 1340 46, 1460 18, 1600 34 L1600 0 L0 0 Z" fill="#1A2B21" opacity="0.14"/>
+</svg>
+
+<section id="rsvp">
+  <div style="display: flex; justify-content: center;">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSe_dVsJBJaNvOWQGi-O6SHeKwb4ll84bb88yTxJKBGJCNt0KA/viewform?embedded=true"
+      width="640"
+      height="800"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
+
+</section>
+
+
+<svg class="ridge-divider" viewBox="0 0 1600 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 60 L0 40 C 140 20, 260 45, 400 25 C 520 8, 600 8, 680 32 C 760 55, 860 40, 980 30 C 1100 20, 1220 45, 1340 35 C 1440 27, 1520 42, 1600 32 L1600 60 Z" fill="#2C5F66" opacity="0.15"/>
+</svg>
+
+<section id="registry">
+  <div class="wrap">
+    <p class="kicker">gifts</p>
+    <h2>TBA</h2>
+    <div class="registry-card">
+      <p>TBA</p>
+    </div>
+  </div>
+</section>
+
+<svg class="ridge-divider" viewBox="0 0 1600 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 30 C 160 55, 260 10, 420 35 C 560 57, 660 15, 800 30 C 940 45, 1040 12, 1200 30 C 1340 46, 1460 18, 1600 34 L1600 0 L0 0 Z" fill="#B5502E" opacity="0.1"/>
+</svg>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="kicker">questions</p>
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <button class="faq-q">Are children welcome? <span class="plus">+</span></button>
+      <div class="faq-a"><p>Yes, of course children are welcome!</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What's the weather backup plan? <span class="plus">+</span></button>
+      <div class="faq-a"><p>There is a barn on site so we can hide away from any bad weather if need be. It is going to be Scotland in April so pack your warm layers!
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I bring my mountain bike? <span class="plus">+</span></button>
+      <div class="faq-a"><p>Please bring your mountain bike, and any other activity you want to do. The trails are just seconds away so get ready for the shreddy!</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What's happening with the sauna? <span class="plus">+</span></button>
+      <div class="faq-a"><p>We will book a few session on Friday morning for people to enjoy.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="voice">Kasia &amp; Ben</p>
+  <p class="tag">8th April 2027 · Comrie Croft · Cannot wait to have a big party with all you lot!</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+
+  let attending = null;
+  document.querySelectorAll('.att-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.att-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      attending = btn.dataset.val;
+    });
+  });
+
+  const form = document.getElementById('rsvpForm');
+  const msg = document.getElementById('formMsg');
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    msg.textContent = '';
+    msg.className = 'form-msg';
+
+    const name = document.getElementById('rname').value.trim();
+    const email = document.getElementById('remail').value.trim();
+
+    if(!name || !email){
+      msg.textContent = 'Please fill in your name and email.';
+      msg.classList.add('err');
+      return;
+    }
+    if(!attending){
+      msg.textContent = 'Please let us know if you can make it.';
+      msg.classList.add('err');
+      return;
+    }
+
+    const entry = {
+      name,
+      email,
+      attending,
+      guests: document.getElementById('rguests').value || null,
+      diet: document.getElementById('rdiet').value.trim() || null,
+      message: document.getElementById('rmsg').value.trim() || null,
+      submittedAt: new Date().toISOString()
+    };
+
+    const key = 'rsvp:' + Date.now() + '-' + Math.random().toString(36).slice(2,8);
+
+    try{
+      if(window.storage){
+        await window.storage.set(key, JSON.stringify(entry), true);
+        msg.textContent = 'Thank you — your RSVP has been sent!';
+        msg.classList.add('ok');
+        form.reset();
+        document.querySelectorAll('.att-btn').forEach(b=>b.classList.remove('active'));
+        attending = null;
+      } else {
+        msg.textContent = 'Thanks! (Storage unavailable in this preview — connect it to collect real RSVPs.)';
+        msg.classList.add('ok');
+      }
+    }catch(err){
+      msg.textContent = 'Something went wrong — please try again, or email us directly.';
+      msg.classList.add('err');
+    }
+  });
+</script>
+
+</body>
+</html>
